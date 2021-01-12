@@ -1,8 +1,9 @@
 // Assignment code here
-let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let lowerCase = "abcdefghijklmnopqrstuvwxyz";
-let numbers = "1234567890";
-let symbols = "!@#$%^&*_-+=:;><.,/?";
+let upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","W","X","Y","Z"];
+let lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+let numbers = ["1","2","3","4","5","6","7","8","9","0"];
+let symbols = ["!","@","#","$","%","^","&","*","(",")","{","}","|","[","]",";","'",":","<",">","?","/"];
+let passCriteria = [];
 
 //Prompts for passoword criteria
 function generatePassword () {
@@ -12,15 +13,17 @@ function generatePassword () {
   let setLowerCase=confirm("Include ~lowercase~ letter?");
   let setNumbers=confirm("Include numbers?");
   let useSymbols=confirm("Include special character? Eg '!#%^' ");
-}
 
-//Prompt for passowrd length
-let passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
-while(passLength < 8 || passLength > 128) {
-  alert("Sorry, your password must be betwen 8-128 characters.");
-  passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
-}
+  
 
+
+  //Prompt for passowrd length
+  let passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
+  while(passLength < 8 || passLength > 128) {
+    alert("Sorry, your password must be betwen 8-128 characters.");
+    passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
+  }
+}
 
 
 // Get references to the #generate element
