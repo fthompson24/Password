@@ -5,17 +5,36 @@ let numbers = ["1","2","3","4","5","6","7","8","9","0"];
 let symbols = ["!","@","#","$","%","^","&","*","(",")","{","}","|","[","]",";","'",":","<",">","?","/"];
 let passCriteria = [];
 
+
+
+
 //Prompts for passoword criteria
 function generatePassword () {
-  let pass="";
+  let password="";
+
   alert("Please set the criteria for your password.");
+  //setting criteria
   let setUpperCase=confirm("Include ~UPPERCASE~ letters?");
   let setLowerCase=confirm("Include ~lowercase~ letter?");
   let setNumbers=confirm("Include numbers?");
   let setSymbols=confirm("Include special character? Eg '!#%^' ");
+  if (setUpperCase===false && setLowerCase===false && setNumbers===false && setSymbols===false) {
+    alert("You must select at least one criteria to generate password. Please choose again.")
+    return generatePassword();
+  }
+
+
+
+
+  //Prompt for passowrd length
+  let passLength = parseInt(prompt("How many characters will your password be? Enter a number betweem 8-128."));
+  while(passLength < 8 || passLength > 128) {
+    alert("Sorry, your password must be betwen 8-128 characters.");
+    passLength = parseInt(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
+  }
 
   //added selected characters to password array
-  if (setUpperCase===true){
+  if (setUpperCase===true) {
     passCriteria.push(upperCase);
   }
   if (setLowerCase===true){
@@ -29,14 +48,8 @@ function generatePassword () {
   }
 
 
-  //Prompt for passowrd length
-  let passLength =parseInt(prompt("How many characters will your password be? Enter a number betweem 8-128."));
-  while(passLength < 8 || passLength > 128) {
-    alert("Sorry, your password must be betwen 8-128 characters.");
-    passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
-  }
 
-  //
+  //loop for length of the password 
   for(let i=0;i<passLength;i++){
 
     let randomCharSet       //variable that store random number based on length of passCriteria[]
@@ -53,10 +66,10 @@ function generatePassword () {
     randomPassword = selectedCharSet[randomCharNumber];
 
     //add to password string
-    pass+=randomPassword
+    password+=randomPassword
   }
   //console.log("Password --- " + pass);    <<to check pass in console
-  return pass
+  return password
  
 }
 
@@ -66,10 +79,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var pass = generatePassword();
+  var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = pass;
+  passwordText.value = password;
 }
 
 // Add event listener to generate button

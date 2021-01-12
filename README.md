@@ -20,7 +20,7 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
-![Alt text](![image](https://user-images.githubusercontent.com/71037699/104265448-41546200-5453-11eb-8579-ba2472033b08.png)
+(![image](https://user-images.githubusercontent.com/71037699/104265448-41546200-5453-11eb-8579-ba2472033b08.png)
 
 # Link to Password Generator
-[a link](https://fthompson24.github.io/Password/)
+(https://fthompson24.github.io/Password/)
