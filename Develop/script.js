@@ -8,7 +8,7 @@ let passCriteria = [];
 //Prompts for passoword criteria
 function generatePassword () {
   let pass="";
-  alert("Please set the criteria for your passoword.");
+  alert("Please set the criteria for your password.");
   let setUpperCase=confirm("Include ~UPPERCASE~ letters?");
   let setLowerCase=confirm("Include ~lowercase~ letter?");
   let setNumbers=confirm("Include numbers?");
@@ -30,7 +30,7 @@ function generatePassword () {
 
 
   //Prompt for passowrd length
-  let passLength =parseInt(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
+  let passLength =parseInt(prompt("How many characters will your password be? Enter a number betweem 8-128."));
   while(passLength < 8 || passLength > 128) {
     alert("Sorry, your password must be betwen 8-128 characters.");
     passLength = Number(prompt("How many characters will your passoword be? Enter a number betweem 8-128."));
@@ -55,7 +55,9 @@ function generatePassword () {
     //add to password string
     pass+=randomPassword
   }
-  console.log("Password --- " + pass);
+  //console.log("Password --- " + pass);    <<to check pass in console
+  return pass
+ 
 }
 
 
@@ -64,10 +66,10 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var pass = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = pass;
 }
 
 // Add event listener to generate button
