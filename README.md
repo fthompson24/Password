@@ -24,3 +24,6 @@ THEN the password is either displayed in an alert or written to the page
 
 # Link to Password Generator
 (https://fthompson24.github.io/Password/)
+
+# Issues
+Generator will sometimes not listen to criteria. Example: When selecting only number and choosing password length of 22, the password generated contained multiple upper and lower case letters. Debugging ongoing..
